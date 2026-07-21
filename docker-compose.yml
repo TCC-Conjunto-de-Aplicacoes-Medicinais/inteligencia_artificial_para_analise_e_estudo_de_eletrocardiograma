@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  ai-engine:
+    build:
+      context: ./backend_go
+      dockerfile: Dockerfile
+    container_name: ecg_ai_engine
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - GIN_MODE=release
+      - CASSANDRA_HOST=cassandra
+      - CASSANDRA_KEYSPACE=ecg_analytics
+    depends_on:
+      - cassandra
+    networks:
+      - openhealth_net
+
+  cassandra:
+    image: cassandra:4.1
+    container_name: ecg_cassandra
+    ports:
+      - "9042:9042"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=ECGAnalyticsCluster
+    volumes:
+      - cassandra_data:/var/lib/cassandra
+    networks:
+      - openhealth_net
+
+networks:
+  openhealth_net:
+    driver: bridge
+
+volumes:
+  cassandra_data:
