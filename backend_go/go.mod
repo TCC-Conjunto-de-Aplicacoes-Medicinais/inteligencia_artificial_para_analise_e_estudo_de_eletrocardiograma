@@ -1,4 +1,4 @@
-module github.com/pohinc/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go
+module github.com/TCC-Conjunto-de-Aplicacoes-Medicinais/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go
 
 go 1.22.0
 

@@ -5,10 +5,10 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	httpadapter "github.com/pohinc/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go/internal/adapters/http"
-	onnxadapter "github.com/pohinc/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go/internal/adapters/onnx"
-	storageadapter "github.com/pohinc/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go/internal/adapters/storage"
-	"github.com/pohinc/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go/internal/core/services"
+	httpadapter "github.com/TCC-Conjunto-de-Aplicacoes-Medicinais/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go/internal/adapters/http"
+	onnxadapter "github.com/TCC-Conjunto-de-Aplicacoes-Medicinais/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go/internal/adapters/onnx"
+	storageadapter "github.com/TCC-Conjunto-de-Aplicacoes-Medicinais/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go/internal/adapters/storage"
+	"github.com/TCC-Conjunto-de-Aplicacoes-Medicinais/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go/internal/core/services"
 )
 
 func main() {

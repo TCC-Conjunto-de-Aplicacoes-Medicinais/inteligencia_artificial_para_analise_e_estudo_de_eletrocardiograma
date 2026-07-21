@@ -47,11 +47,11 @@ Como o treinamento com 22 mil registros é otimizado para GPU, recomendava-se ut
 ---
 
 ### **Passo 2: Clonar o Repositório e Instalar Dependências**
-No primeiro bloco de código do Colab, rode:
+No primeiro bloco de código do Colab, execute:
 
 ```python
 # 1. Clonar o repositório do projeto
-!git clone https://github.com/pohinc/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma.git
+!git clone https://github.com/TCC-Conjunto-de-Aplicacoes-Medicinais/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma.git
 %cd inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma
 
 # 2. Instalar dependências de ML
@@ -60,16 +60,36 @@ No primeiro bloco de código do Colab, rode:
 
 ---
 
+### **Passo 2.5: Baixar o Dataset PTB-XL (Necessário para Treino Real)**
+Para treinar as redes com dados reais de ECG em vez de dados simulados (stubs/dummy), você precisa baixar e descompactar o dataset PTB-XL (cerca de 1.7 GB) na pasta raiz do projeto. Execute o seguinte bloco de código no Colab:
+
+```python
+# Garantir que estamos na pasta raiz do repositório
+%cd /content/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma
+
+# Baixar o dataset oficial PTB-XL do PhysioNet
+!wget -O ptb-xl.zip https://physionet.org/static/published-projects/ptb-xl/ptb-xl-a-large-publicly-available-electrocardiography-dataset-1.0.3.zip
+
+# Descompactar na pasta atual
+!unzip -q ptb-xl.zip
+```
+
+---
+
 ### **Passo 3: Executar os Scripts de Treinamento e Exportação ONNX**
+
+> ⚠️ **Nota:** Como você reiniciou o ambiente de execução no passo anterior, o Google Colab reseta a pasta atual de volta para `/content`. Certifique-se de navegar de volta para a pasta do repositório antes de rodar os scripts.
 
 #### Treinar o Agente 1 (Infarto Agudo do Miocárdio - IAM):
 ```python
-!python ml_pipeline/train_infarto.py
+%cd /content/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma
+!python -m ml_pipeline.train_infarto
 ```
 
 #### Treinar o Agente 2 (Sobrecarga / Condução / Arritmia):
 ```python
-!python ml_pipeline/train_sobrecarga.py
+%cd /content/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma
+!python -m ml_pipeline.train_sobrecarga
 ```
 
 > 💡 **O que estes scripts fazem automaticamente?**

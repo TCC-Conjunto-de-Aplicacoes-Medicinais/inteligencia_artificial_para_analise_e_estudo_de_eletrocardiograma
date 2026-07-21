@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/pohinc/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go/internal/core/domain"
-	"github.com/pohinc/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go/internal/core/ports"
+	"github.com/TCC-Conjunto-de-Aplicacoes-Medicinais/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go/internal/core/domain"
+	"github.com/TCC-Conjunto-de-Aplicacoes-Medicinais/inteligencia_artificial_para_analise_e_estudo_de_eletrocardiograma/backend_go/internal/core/ports"
 )
 
 type ECGHandler struct {
